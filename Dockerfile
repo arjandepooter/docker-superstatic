@@ -7,9 +7,9 @@ ENV USE_GZIP true
 
 RUN npm install -g superstatic
 
-VOLUME /data
 WORKDIR /data
 ADD index.html /data/index.html
+
 ONBUILD RUN rm /data/index.html
 ONBUILD ADD . /data
 
