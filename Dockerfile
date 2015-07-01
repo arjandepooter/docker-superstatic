@@ -1,4 +1,4 @@
-FROM iojs:2
+FROM iojs:1.8
 
 RUN npm install -g superstatic
 
