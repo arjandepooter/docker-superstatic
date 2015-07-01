@@ -9,6 +9,7 @@ ENV USE_GZIP true
 VOLUME /data
 WORKDIR /data
 ADD index.html /data/index.html
+ONBUILD RUN rm /data/index.html
 ONBUILD ADD . /data
 
 EXPOSE $PORT
