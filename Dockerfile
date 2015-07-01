@@ -1,10 +1,11 @@
 FROM iojs:1.8
 
-RUN npm install -g superstatic
-
+ENV NPM_CONFIG_LOGLEVEL warn
 ENV PORT 8080
 ENV LOG_REQUESTS true
 ENV USE_GZIP true
+
+RUN npm install -g superstatic
 
 VOLUME /data
 WORKDIR /data
