@@ -1,4 +1,4 @@
-FROM iojs:1.8
+FROM node:4
 
 ENV NPM_CONFIG_LOGLEVEL warn
 ENV PORT 8080
@@ -14,4 +14,4 @@ ONBUILD RUN rm /data/index.html
 ONBUILD ADD . /data
 
 EXPOSE $PORT
-ENTRYPOINT superstatic --host 0.0.0.0 --port $PORT --gzip $USE_GZIP --debug LOG_REQUESTS
+ENTRYPOINT superstatic --host 0.0.0.0 --port $PORT --gzip $USE_GZIP --debug $LOG_REQUESTS
